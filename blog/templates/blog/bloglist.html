@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    Blog
+{% endblock title %}
+
+{% block content %}
+    <h2>Ramblings and Ruminations</h2>
+    <ul>
+        {% for blogpost in blogposts %}
+            <li><a href="/blog/{{ blogpost.id }}">{{ blogpost.title }}</a>
+                <br>
+                <p>{{ blogpost.text|slice:":200" }}...</p>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
