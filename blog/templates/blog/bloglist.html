@@ -8,9 +8,9 @@
     <h2>Ramblings and Ruminations</h2>
     <ul>
         {% for blogpost in blogposts %}
-            <li><a href="/blog/{{ blogpost.id }}">{{ blogpost.title }}</a>
+            <li><a href="/blog/{{ blogpost.id }}">{{ blogpost.title|safe }}</a>
                 <br>
-                <p>{{ blogpost.text|slice:":200" }}...</p>
+                <p>{{ blogpost.text|slice:":200"|safe }}...</p>
                 <br>
             </li>
         {% endfor %}
