@@ -1,20 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
 	    <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <title>{% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static 'blog/style.css' %}">
     </head>
     <body>
     <header>ANTONYFB.COM</header>
+    <main>
     <nav>
-        <a href="{% url 'blog:home' %}">Home</a>
-        <a href="{% url 'blog:about' %}">About</a>
-        <a href="{% url 'blog:blog' %}">Blog</a>
-        <a href="{% url 'blog:rss_feed' %}">RSS</a>
+        <a class="navLink" href="{% url 'blog:home' %}">Home</a>
+        <a class="navLink" href="{% url 'blog:about' %}">About</a>
+        <a class="navLink" href="{% url 'blog:blog' %}">Blog</a>
+        <a class="navLink" href="{% url 'blog:rss_feed' %}">RSS</a>
     </nav>
+    <content>
 	{% block content %}{% endblock content %}
+    </content>
+    </main>
     <footer>
+        <h3>Socials</h3>
+        <div class="footLink">
+            <img class="footIcon" src="/media/svg/logo-github.svg" alt="Github logo">
+            <a href="https://github.com/afoxbr"> Github  </a>
+        </div>
+        <div class="footLink">
+            <img class="footIcon" src="/media/svg/logo-mastodon.svg" alt="Mastodon logo">
+            <a href="https://fosstodon.org/@afb"> Mastodon</a>
+        </div>
     </footer>
     </body>
 </html>
