@@ -6,5 +6,6 @@
 
 {% block content %}
     <h3>{{ blogpost.title|safe }}</h3>
+    <p>{{ blogpost.date_added }}</p>
     <p>{{ blogpost.text|safe }}</p>
 {% endblock content %}
